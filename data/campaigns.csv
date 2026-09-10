@@ -1,0 +1,13 @@
+campaign_id,campaign_name,channel,objective,currency,daily_budget,start_date,end_date
+C001,brand_search_us,google_search,conversions,USD,800,2026-05-15,
+C002,nonbrand_search_us,google_search,conversions,USD,1200,2026-05-15,
+C003,search_in_generic,google_search,traffic,INR,65000,2026-06-01,
+C004,meta_prospecting_us,meta,conversions,USD,1500,2026-05-20,
+C005,meta_retargeting_us,meta,conversions,USD,600,2026-05-20,
+C006,meta_prospecting_in,meta,conversions,INR,90000,2026-06-08,
+C007,summer_sale_meta,meta,conversions,USD,2500,2026-06-20,2026-08-02
+C008,youtube_awareness_in,youtube,awareness,INR,120000,2026-06-01,
+C009,youtube_prospecting_us,youtube,traffic,USD,700,2026-07-01,
+C010,linkedin_b2b_leads,linkedin,conversions,USD,900,2026-05-10,
+C011,linkedin_thought_leadership,linkedin,awareness,USD,400,2026-06-15,2026-08-20
+C012,diwali_teaser_in,meta,awareness,INR,45000,2026-08-25,

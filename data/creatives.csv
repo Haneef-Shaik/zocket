@@ -1,0 +1,32 @@
+creative_id,campaign_id,creative_name,format,headline,launched_on
+CR001,C001,brand_rsa_core,responsive_search,Official Store — Free 2-Day Shipping,2026-05-15
+CR002,C001,brand_rsa_offer,responsive_search,Shop Direct and Save 10%,2026-05-15
+CR003,C002,generic_rsa_running,responsive_search,Running Shoes Built for Long Miles,2026-05-15
+CR004,C002,generic_rsa_trail,responsive_search,Trail Shoes That Grip Everything,2026-05-15
+CR005,C002,generic_rsa_price,responsive_search,Performance Shoes From $89,2026-05-15
+CR006,C002,generic_dsa_catalog,text,Browse the Full Catalog,2026-05-15
+CR007,C003,in_generic_rsa_hi,responsive_search,Best Running Shoes Online,2026-06-01
+CR008,C003,in_generic_rsa_offers,responsive_search,Sale Live — Up To 40% Off,2026-06-01
+CR009,C004,prospect_ugc_v1,video,I Wore These For 300 Miles,2026-05-20
+CR010,C004,prospect_carousel_bestsellers,carousel,This Season's Bestsellers,2026-05-20
+CR011,C004,prospect_static_hero,image,Engineered For The Long Run,2026-05-20
+CR012,C004,prospect_ugc_v2,video,Three Months In — Honest Review,2026-07-20
+CR013,C005,retarget_dpa,carousel,Still Thinking About It?,2026-05-20
+CR014,C005,retarget_cart_reminder,image,Your Cart Is Waiting,2026-05-20
+CR015,C006,in_prospect_reel_v1,video,Made For Indian Roads,2026-06-08
+CR016,C006,in_prospect_static,image,Free Delivery Across India,2026-06-08
+CR017,C006,in_prospect_carousel,carousel,"Six Styles, One Price",2026-06-08
+CR018,C007,sale_hero_video,video,Summer Sale — Up To 50% Off,2026-06-20
+CR019,C007,sale_countdown,image,48 Hours Left,2026-06-20
+CR020,C007,sale_carousel,carousel,Sale Picks Under $100,2026-06-20
+CR021,C008,yt_brand_film_30s,video,Every Mile Counts,2026-06-01
+CR022,C008,yt_bumper_6s,video,Every Mile Counts — 6s,2026-06-01
+CR023,C009,yt_demo_15s,video,See The Midsole In Action,2026-07-01
+CR024,C009,yt_review_cutdown,video,What Runners Are Saying,2026-07-01
+CR025,C010,b2b_whitepaper,image,The 2026 Team Kit Buyer's Guide,2026-05-10
+CR026,C010,b2b_case_study,image,How One Club Cut Kit Costs 30%,2026-05-10
+CR027,C010,b2b_demo_request,text,Book A Bulk Pricing Call,2026-05-10
+CR028,C011,tl_founder_post,image,Why We Stopped Discounting,2026-06-15
+CR029,C011,tl_industry_report,image,State Of Team Sportswear 2026,2026-06-15
+CR030,C012,diwali_teaser_reel,video,Something Is Coming This Diwali,2026-08-25
+CR031,C012,diwali_teaser_static,image,Diwali Drop — Save The Date,2026-08-25
