@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { DEFAULT_API_VERSION } from "@/llm/config";
+import { defaultApiVersion } from "@/llm/config";
 import { DEFAULT_MODEL_ID, listSharedModels } from "@/llm/models";
 import { deviceCookie, identifyDevice } from "@/quota/device";
 import { peekQuota, TRIAL_LIMIT } from "@/quota/quota";
@@ -20,7 +20,7 @@ export async function GET(req: Request) {
   const res = NextResponse.json({
     provider: "azure-openai",
     defaultModel: DEFAULT_MODEL_ID,
-    defaultApiVersion: DEFAULT_API_VERSION,
+    defaultApiVersion: defaultApiVersion(),
     /** Selectable on the shared key. With your own key, any deployment works. */
     sharedModels: listSharedModels().map((m) => ({
       id: m.id,

@@ -22,9 +22,15 @@ import {
   type ModelDef,
 } from "@/llm/models";
 
-/** Azure API version. Structured outputs need 2024-08-01-preview or later. */
-export const DEFAULT_API_VERSION =
-  process.env.AZURE_OPENAI_API_VERSION ?? "2024-10-21";
+/**
+ * Azure API version. Structured outputs need 2024-08-01-preview or later.
+ *
+ * A function rather than a constant for the same reason the deployment name is:
+ * a module-scope read of process.env happens before any .env file is loaded.
+ */
+export function defaultApiVersion(): string {
+  return process.env.AZURE_OPENAI_API_VERSION?.trim() || "2024-10-21";
+}
 
 /**
  * What the client may send. Anything absent falls back to the shared trial
@@ -80,7 +86,7 @@ export function resolveLlmConfig(input: Credentials): ResolvedLlmConfig {
     return {
       apiKey: input.apiKey!,
       endpoint: normalizeEndpoint(input.endpoint!),
-      apiVersion: input.apiVersion ?? DEFAULT_API_VERSION,
+      apiVersion: input.apiVersion ?? defaultApiVersion(),
       model,
       mode: "byok",
     };
@@ -100,7 +106,7 @@ export function resolveLlmConfig(input: Credentials): ResolvedLlmConfig {
   return {
     apiKey: sharedKey,
     endpoint: normalizeEndpoint(sharedEndpoint),
-    apiVersion: input.apiVersion ?? DEFAULT_API_VERSION,
+    apiVersion: input.apiVersion ?? defaultApiVersion(),
     model: resolveSharedModel(input.model),
     mode: "shared",
   };

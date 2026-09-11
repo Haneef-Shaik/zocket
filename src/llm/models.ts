@@ -32,7 +32,7 @@ export const DEFAULT_MODEL_ID = "gpt6-sol";
 export const SHARED_MODELS: Readonly<Record<string, ModelDef>> = {
   "gpt6-sol": {
     id: "gpt6-sol",
-    deployment: process.env.AZURE_OPENAI_DEPLOYMENT ?? "gpt6-sol",
+    deployment: "gpt6-sol",
     label: "GPT-6 Sol",
     api: "chat",
     structuredOutputs: true,
@@ -53,8 +53,26 @@ export const SHARED_MODELS: Readonly<Record<string, ModelDef>> = {
   },
 } as const;
 
+/**
+ * The default model's Azure deployment name, which the resource owner chooses.
+ *
+ * Read when asked rather than at module load: env files are loaded after a
+ * module's imports have been evaluated, so a module-scope read sees an empty
+ * environment and quietly falls back to a name that does not exist. That
+ * surfaces much later as a 404 against a deployment nobody configured.
+ */
+function withDeploymentOverride(model: ModelDef): ModelDef {
+  if (model.id !== DEFAULT_MODEL_ID) return model;
+  const override = process.env.AZURE_OPENAI_DEPLOYMENT?.trim();
+  if (!override || override === model.deployment) return model;
+  // Show the deployment that will actually serve the request. A picker reading
+  // "GPT-6 Sol" while the resource runs something else is a trace nobody can
+  // reconcile against their Azure bill.
+  return { ...model, deployment: override, label: override };
+}
+
 export function listSharedModels(): readonly ModelDef[] {
-  return Object.values(SHARED_MODELS);
+  return Object.values(SHARED_MODELS).map(withDeploymentOverride);
 }
 
 export function resolveSharedModel(id: string | undefined): ModelDef {
@@ -63,7 +81,7 @@ export function resolveSharedModel(id: string | undefined): ModelDef {
   if (!model) {
     throw new ModelNotAllowedError(key, Object.keys(SHARED_MODELS));
   }
-  return model;
+  return withDeploymentOverride(model);
 }
 
 /** A caller-supplied deployment, used only with a caller-supplied key. */

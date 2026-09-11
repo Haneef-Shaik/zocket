@@ -9,6 +9,7 @@
  */
 
 import type { TimeRange } from "@/plan/schema";
+import type { Coverage } from "@/db/duckdb";
 import { POLICIES } from "@/semantic/policies";
 
 export interface ResolvedRange {
@@ -22,19 +23,19 @@ export interface ResolvedRange {
   readonly empty: boolean;
   /** True when the range includes the partial final day of the extract. */
   readonly includesPartialDay: boolean;
+  /**
+   * True when the partial final day was deliberately left out. The answer has to
+   * say so: "flat week on week" and "down 12%" are the same query over windows
+   * that differ by one incomplete day.
+   */
+  readonly excludedPartialDay: boolean;
 }
 
 const DAY_MS = 86_400_000;
 
-const toDate = (s: string): Date => new Date(`${s}T00:00:00Z`);
-const toIso = (d: Date): string => d.toISOString().slice(0, 10);
-const addDays = (d: Date, n: number): Date => new Date(d.getTime() + n * DAY_MS);
-
-/** Monday-start week containing `d`. */
-function startOfWeek(d: Date): Date {
-  const dow = (d.getUTCDay() + 6) % 7;
-  return addDays(d, -dow);
-}
+export const toDate = (s: string): Date => new Date(`${s}T00:00:00Z`);
+export const toIso = (d: Date): string => d.toISOString().slice(0, 10);
+export const addDays = (d: Date, n: number): Date => new Date(d.getTime() + n * DAY_MS);
 
 function startOfMonth(d: Date): Date {
   return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1));
@@ -57,36 +58,52 @@ function addUnits(d: Date, n: number, unit: "day" | "week" | "month" | "quarter"
   }
 }
 
-function startOfUnit(d: Date, unit: "day" | "week" | "month" | "quarter"): Date {
-  switch (unit) {
-    case "day":
-      return d;
-    case "week":
-      return startOfWeek(d);
-    case "month":
-      return startOfMonth(d);
-    case "quarter":
-      return startOfQuarter(d);
-  }
+function startOfCalendarUnit(d: Date, unit: "month" | "quarter"): Date {
+  return unit === "month" ? startOfMonth(d) : startOfQuarter(d);
+}
+
+/**
+ * The last day we treat as fully loaded.
+ *
+ * The extract's final day is a partial load, so any window that means "a
+ * complete period" has to stop before it. This single definition is why the
+ * partial-day rule is applied by code rather than remembered by a prompt.
+ */
+export function lastCompleteDay(coverage: Coverage): string {
+  const asOf = toDate(coverage.lastDate);
+  return POLICIES.partialFinalDay ? toIso(addDays(asOf, -1)) : coverage.lastDate;
 }
 
 /**
  * Turn a plan's time range into concrete dates.
  *
- * `asOf` is the last date in the data, never the wall clock. `lastCompleteDay`
- * is the last date we consider fully loaded -- the extract's final day is a
- * partial load, so whole-calendar-unit ranges stop before it.
+ * `asOf` is the last date in the data, never the wall clock.
+ *
+ * The `calendar` flag carries the whole partial-day rule:
+ *
+ *   * `calendar: false` -- "the last eight weeks". A rolling window the user
+ *     anchored explicitly. It ends at `as_of`, includes the partial final day,
+ *     and says so with a flag.
+ *   * `calendar: true` -- "last week", "this quarter". A named *complete*
+ *     period, which ends at the last complete day.
+ *
+ * Days and weeks resolve as trailing blocks aligned to the last complete day
+ * rather than to a Monday. That is the convention the golden set encodes
+ * ("last week" = 28 Aug - 3 Sep against an as_of of 4 Sep) and it is the one
+ * that keeps week-over-week stable as each day lands: a Monday-aligned grid
+ * would make "last week" mean a different window every day of the week.
+ * Months and quarters keep true calendar boundaries, where the named unit is
+ * unambiguous.
  */
-export function resolveRange(
-  range: TimeRange,
-  coverage: { firstDate: string; lastDate: string },
-): ResolvedRange {
+export function resolveRange(range: TimeRange, coverage: Coverage): ResolvedRange {
   const asOf = toDate(coverage.lastDate);
   const covLo = toDate(coverage.firstDate);
   const covHi = asOf;
+  const lastComplete = toDate(lastCompleteDay(coverage));
 
   let reqLo: Date;
   let reqHi: Date;
+  let excluded = false;
 
   if (range.type === "all_time") {
     reqLo = covLo;
@@ -94,13 +111,19 @@ export function resolveRange(
   } else if (range.type === "absolute") {
     reqLo = toDate(range.start);
     reqHi = toDate(range.end);
+  } else if (range.calendar && (range.unit === "day" || range.unit === "week")) {
+    // Complete days/weeks: trailing blocks ending at the last complete day.
+    const span = range.unit === "week" ? 7 : 1;
+    reqHi = addDays(lastComplete, -range.offset * span);
+    reqLo = addDays(reqHi, -(range.n * span) + 1);
+    excluded = POLICIES.partialFinalDay && range.offset === 0;
   } else if (range.calendar) {
-    // "last week" / "this quarter" -- whole calendar units. `offset` counts
-    // back from the current unit, so offset=1 is the last COMPLETE unit and
-    // naturally excludes the partial final day.
-    const anchor = startOfUnit(asOf, range.unit);
-    const lo = startOfUnit(addUnits(anchor, -range.offset, range.unit), range.unit);
-    const hi = addDays(startOfUnit(addUnits(lo, range.n, range.unit), range.unit), -1);
+    // Whole calendar months/quarters. offset=0 is the current unit to date,
+    // which coverage clipping then caps at as_of; offset>=1 is a complete unit.
+    const unit = range.unit as "month" | "quarter";
+    const anchor = startOfCalendarUnit(asOf, unit);
+    const lo = startOfCalendarUnit(addUnits(anchor, -range.offset, unit), unit);
+    const hi = addDays(startOfCalendarUnit(addUnits(lo, range.n, unit), unit), -1);
     reqLo = lo;
     reqHi = hi;
   } else {
@@ -121,5 +144,11 @@ export function resolveRange(
     empty,
     includesPartialDay:
       POLICIES.partialFinalDay && !empty && toIso(resHi) === coverage.lastDate,
+    excludedPartialDay: excluded && !empty,
   };
+}
+
+/** A window the *policy* fixed rather than the user: turn-off lookback, drop baseline. */
+export function fixedRange(start: string, end: string, coverage: Coverage): ResolvedRange {
+  return resolveRange({ type: "absolute", start, end }, coverage);
 }

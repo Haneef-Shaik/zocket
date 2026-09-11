@@ -67,9 +67,6 @@ export async function POST(req: Request) {
 function errorResponse(err: unknown, quota: unknown) {
   const message = err instanceof Error ? err.message : "unknown error";
 
-  if (message.startsWith("NotImplemented")) {
-    return NextResponse.json({ error: message, quota }, { status: 501 });
-  }
   if (err instanceof LlmError) {
     // Provider-side problems are the caller's to act on (wrong deployment,
     // bad key, rate limit), so the message goes through verbatim -- it is

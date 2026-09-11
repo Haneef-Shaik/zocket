@@ -19,23 +19,56 @@ export interface ChartSpec {
   readonly annotation?: { readonly label: string; readonly value: number };
 }
 
-export function chooseChart(plan: Plan, columns: readonly string[]): ChartSpec | null {
-  const measures = columns.filter((c) => !["label", "date", "dimension"].includes(c));
+/**
+ * The headline measure: the one the question was actually about.
+ *
+ * Ratio metrics drag their components onto the result table so the number is
+ * checkable, but plotting revenue, spend and ROAS on one axis produces a chart
+ * where the bar that matters is invisible. The table carries everything; the
+ * chart carries the point.
+ */
+function primaryMeasure(plan: Plan, measures: readonly string[]): string | null {
+  switch (plan.plan_type) {
+    case "ranking":
+      return plan.order_by;
+    case "turn_off_candidate":
+      return "roas";
+    case "budget_pacing":
+      return "pacing_pct";
+    default:
+      return measures[0] ?? null;
+  }
+}
+
+export function chooseChart(
+  plan: Plan,
+  measures: readonly string[],
+): ChartSpec | null {
+  const primary = primaryMeasure(plan, measures);
+  const one = primary ? [primary] : [];
 
   switch (plan.plan_type) {
     case "single_value":
       return { kind: "stat", x: null, y: measures, title: plan.interpretation };
     case "breakdown":
-      return { kind: "bar", x: "label", y: measures, title: plan.interpretation };
+      return { kind: "bar", x: "label", y: one, title: plan.interpretation };
     case "ranking":
     case "turn_off_candidate":
     case "budget_pacing":
-      return { kind: "hbar", x: "label", y: measures, title: plan.interpretation };
+      return { kind: "hbar", x: "label", y: one, title: plan.interpretation };
     case "time_series":
-    case "diagnose_drop":
-      return { kind: "line", x: "date", y: measures, title: plan.interpretation };
+      return { kind: "line", x: "date", y: one, title: plan.interpretation };
     case "compare_periods":
-      return { kind: "grouped_bar", x: "label", y: measures, title: plan.interpretation };
+      return { kind: "grouped_bar", x: "label", y: one, title: plan.interpretation };
+    case "diagnose_drop":
+      // Paired bars, not a line: the comparison is baseline-per-day against one
+      // day, by channel. A line over two points implies a trend that is not there.
+      return {
+        kind: "grouped_bar",
+        x: "label",
+        y: ["baseline_per_day", "target_value"],
+        title: plan.interpretation,
+      };
     case "unanswerable":
       return null;
   }

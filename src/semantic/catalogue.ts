@@ -23,6 +23,15 @@ export interface MetricDef {
   readonly sql: string;
   /** Synonyms users actually type. Grounding only; resolution is the model's job. */
   readonly synonyms: readonly string[];
+  /**
+   * For ratios: the metrics the answer must also show.
+   *
+   * "ROAS 0.78" is an assertion; "$22.9k spent to return $17.9k, a ROAS of
+   * 0.78" is a number someone can check. The compiler selects these alongside
+   * the ratio so the components are always on the table the user is shown --
+   * and so the narrator has them without being asked.
+   */
+  readonly components?: readonly string[];
 }
 
 export const METRICS: Readonly<Record<string, MetricDef>> = {
@@ -74,6 +83,7 @@ export const METRICS: Readonly<Record<string, MetricDef>> = {
     // NULLIF guards the zero-spend-with-revenue rows the extract contains.
     sql: "SUM(revenue_usd) / NULLIF(SUM(spend_usd), 0)",
     synonyms: ["roas", "roi", "return", "revenue per dollar", "efficiency"],
+    components: ["revenue_usd", "spend_usd"],
   },
   cpa: {
     id: "cpa",
@@ -82,6 +92,7 @@ export const METRICS: Readonly<Record<string, MetricDef>> = {
     aggregation: "ratio",
     sql: "SUM(spend_usd) / NULLIF(SUM(conversions), 0)",
     synonyms: ["cpa", "cac", "cost per lead", "cost per acquisition"],
+    components: ["spend_usd", "conversions"],
   },
   ctr: {
     id: "ctr",
@@ -90,6 +101,7 @@ export const METRICS: Readonly<Record<string, MetricDef>> = {
     aggregation: "ratio",
     sql: "SUM(clicks) / NULLIF(SUM(impressions), 0)",
     synonyms: ["ctr", "click through rate"],
+    components: ["clicks", "impressions"],
   },
   cvr: {
     id: "cvr",
@@ -98,6 +110,7 @@ export const METRICS: Readonly<Record<string, MetricDef>> = {
     aggregation: "ratio",
     sql: "SUM(conversions) / NULLIF(SUM(clicks), 0)",
     synonyms: ["cvr", "conversion rate", "close rate"],
+    components: ["conversions", "clicks"],
   },
 } as const;
 

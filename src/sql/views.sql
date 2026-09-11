@@ -129,6 +129,10 @@ WHERE _rn = 1;
 
 CREATE OR REPLACE VIEW fact AS
 SELECT
+    -- One tenant in this extract, but the column is real so the compiler's
+    -- tenant predicate is a real predicate. A filter added later is a filter
+    -- someone forgets on one query path.
+    'demo'                                              AS tenant_id,
     p._ord,
     p.date,
     p.campaign_id,

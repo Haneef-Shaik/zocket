@@ -73,18 +73,35 @@ export async function getCoverage(): Promise<Coverage> {
 
 export type Row = Record<string, unknown>;
 
-async function query(conn: DuckDBConnection, sql: string): Promise<Row[]> {
-  const reader = await conn.runAndReadAll(sql);
+/** Values the compiler is allowed to bind. Anything else is a bug, not a filter. */
+export type Param = string | number | boolean;
+
+async function query(
+  conn: DuckDBConnection,
+  sql: string,
+  params?: Readonly<Record<string, Param>>,
+): Promise<Row[]> {
+  const reader = params
+    ? await conn.runAndReadAll(sql, { ...params })
+    : await conn.runAndReadAll(sql);
   return reader.getRowObjects() as Row[];
 }
 
 /**
  * Read-only query entry point. Every caller is the compiler -- no hand-written
  * SQL reaches this from a request path.
+ *
+ * `params` are bound by DuckDB, not spliced into the string. The only free-form
+ * values that ever reach SQL are filter values and dates off a validated plan,
+ * and they arrive here as parameters so that "what if a campaign is named
+ * `'; DROP`" is not a question anyone has to think about.
  */
-export async function run(sql: string): Promise<Row[]> {
+export async function run(
+  sql: string,
+  params?: Readonly<Record<string, Param>>,
+): Promise<Row[]> {
   const conn = await getConnection();
-  return query(conn, sql);
+  return query(conn, sql, params);
 }
 
 /** Test/CLI helper: drop the cached connection so the next call re-ingests. */
