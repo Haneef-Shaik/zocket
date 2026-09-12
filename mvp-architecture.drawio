@@ -1,0 +1,1267 @@
+<mxfile host="65bd71144e">
+    <diagram id="m1-implementation-map" name="1 · Implementation map">
+        <mxGraphModel dx="2050" dy="1712" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1460" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m1-implementation-map_1" value="Implementation map — every box is a file in this repo" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_2" value="The MVP as built: one Next.js process, an in-process DuckDB, and two calls to Azure OpenAI. No agent framework, no queue, no external database." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1310" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_3" value="LLM call" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_4" value="Deterministic code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="218" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_5" value="Versioned definition" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="396" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_6" value="Stop / error exit" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="574" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_7" value="Infrastructure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="752" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_8" value="BROWSER · app/ — React client" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F7F8FA;strokeColor=#CBD5E0;fontColor=#64748B;fontSize=13;fontStyle=1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="160" width="1320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_9" value="=" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F7F8FA;strokeColor=#CBD5E0;fontColor=#64748B;fontSize=13;fontStyle=1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="352" width="1320" height="168" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_10" value="AGENT CORE · src/ — plain TypeScript, no framework, no HTTP awareness" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F7F8FA;strokeColor=#CBD5E0;fontColor=#64748B;fontSize=13;fontStyle=1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="542" width="1320" height="468" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_11" value="DATA &amp; PROVIDERS" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F7F8FA;strokeColor=#CBD5E0;fontColor=#64748B;fontSize=13;fontStyle=1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1032" width="1320" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_12" value="&lt;b&gt;page.tsx&lt;/b&gt;&lt;br&gt;question box · 7 suggestions · POST /api/ask&lt;br&gt;BYOK creds + theme in localStorage&lt;br&gt;&lt;i&gt;app/page.tsx&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="200" width="300" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_13" value="&lt;b&gt;Settings.tsx&lt;/b&gt;&lt;br&gt;apiKey · endpoint · deployment · model&lt;br&gt;key never leaves the browser except in the POST body&lt;br&gt;&lt;i&gt;app/components/Settings.tsx&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="200" width="290" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_14" value="&lt;b&gt;AnswerView.tsx&lt;/b&gt;&lt;br&gt;interpretation · finding · chart · flags&lt;br&gt;tabs: Rows | SQL | Plan · trace footer&lt;br&gt;&lt;i&gt;app/components/AnswerView.tsx&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="200" width="300" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_15" value="&lt;b&gt;Chart.tsx · Flags.tsx · format.ts&lt;/b&gt;&lt;br&gt;Recharts; kind chosen server-side&lt;br&gt;unit-aware cell formatting&lt;br&gt;&lt;i&gt;app/components/, app/lib/&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="1050" y="200" width="280" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_16" value="&lt;b&gt;POST /api/ask&lt;/b&gt;&lt;br&gt;BodySchema: question 1–1000 chars + optional credentials&lt;br&gt;resolve creds → identify device → charge quota → ask()&lt;br&gt;&lt;i&gt;app/api/ask/route.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="392" width="380" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_17" value="&lt;b&gt;GET /api/config&lt;/b&gt;&lt;br&gt;shared model list, trial limit,&lt;br&gt;quota badge (peek, does not charge)&lt;br&gt;&lt;i&gt;app/api/config/route.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="392" width="300" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_18" value="&lt;b&gt;Trial quota&lt;/b&gt; — signed httpOnly cookie + IP/UA/lang hash; charged against BOTH, refused if EITHER is spent. 5 requests, in-memory counters. BYOK is never charged.&lt;br&gt;&lt;i&gt;src/quota/device.ts · quota.ts · store.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="810" y="392" width="520" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_19" value="&lt;b&gt;ask()&lt;/b&gt; — the loop&lt;br&gt;~90 lines of control flow, hand-written&lt;br&gt;&lt;i&gt;src/agent/orchestrate.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="582" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_20" value="&lt;b&gt;plan()&lt;/b&gt; — LLM #1&lt;br&gt;question → typed plan, structured output&lt;br&gt;&lt;i&gt;src/agent/planner.ts + prompts/planner.md&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="582" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_21" value="&lt;b&gt;narrate()&lt;/b&gt; — LLM #2&lt;br&gt;verified rows → 2–3 sentences, then the guard&lt;br&gt;&lt;i&gt;src/agent/narrator.ts + prompts/narrator.md&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="582" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_22" value="&lt;b&gt;compose.ts&lt;/b&gt; — prose without a model&lt;br&gt;refusal() · interpretation() · templateFinding()&lt;br&gt;&lt;i&gt;src/agent/compose.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1030" y="582" width="300" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_23" value="&lt;b&gt;execute()&lt;/b&gt; — stages 3–7&lt;br&gt;the seam the golden tests drive directly&lt;br&gt;&lt;i&gt;src/agent/execute.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="712" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_24" value="&lt;b&gt;validatePlan() · resolveRange()&lt;/b&gt;&lt;br&gt;answerability verdict · concrete dates · clipping&lt;br&gt;&lt;i&gt;src/plan/validate.ts · resolve.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="712" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_25" value="&lt;b&gt;compile()&lt;/b&gt;&lt;br&gt;plan → SQL + bound params + flag query&lt;br&gt;8 emitters, one per plan type&lt;br&gt;&lt;i&gt;src/sql/compile.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="712" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_26" value="&lt;b&gt;validateResult() · checkNarration()&lt;/b&gt;&lt;br&gt;bigint coercion · 14 flag codes · numeral guard&lt;br&gt;&lt;i&gt;src/verify/&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1030" y="712" width="300" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_27" value="&lt;b&gt;catalogue.ts&lt;/b&gt; — 9 metrics, 6 dimensions&lt;br&gt;the SQL for a metric lives here, not in a prompt&lt;br&gt;SEMANTIC_VERSION = v1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="842" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_28" value="&lt;b&gt;policies.ts&lt;/b&gt; — currency source, dedup,&lt;br&gt;FX gaps, orphans, partial day, TURN_OFF_POLICY&lt;br&gt;POLICY_VERSION = v1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="842" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_29" value="&lt;b&gt;schema.ts · wire.ts&lt;/b&gt; — the plan grammar&lt;br&gt;9 plan types as a zod discriminated union&lt;br&gt;PLAN_GRAMMAR_VERSION = v1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="842" width="290" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_30" value="&lt;b&gt;chart/spec.ts · trace/trace.ts&lt;/b&gt;&lt;br&gt;chart kind by rule from the plan shape;&lt;br&gt;6 versions + per-stage latency on every answer" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1030" y="842" width="300" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_31" value="The model reaches exactly two of these twelve boxes. Everything that decides a number is teal or amber — ordinary code and reviewed definitions — and the arrow leaving a violet box carries a proposal, never a result." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="952" width="1260" height="58" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_32" value="&lt;b&gt;DuckDB, in-process, :memory:&lt;/b&gt;&lt;br&gt;bootstrap() runs views.sql at first query and caches the connection promise. Read-only from the request path.&lt;br&gt;&lt;i&gt;src/db/duckdb.ts · src/sql/views.sql&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="1072" width="380" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_33" value="&lt;b&gt;data/*.csv&lt;/b&gt;&lt;br&gt;ad_performance_daily · campaigns ·&lt;br&gt;creatives · fx_rates&lt;br&gt;2364 rows in → 2341 after dedup" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="1072" width="300" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_34" value="&lt;b&gt;Azure OpenAI&lt;/b&gt; — chat.completions.parse with zodResponseFormat, or responses.parse.&lt;br&gt;One client per credential set; token-ceiling parameter probed once per deployment.&lt;br&gt;&lt;i&gt;src/llm/client.ts · config.ts · models.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="810" y="1072" width="520" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_35" value="POST { question, credentials? }" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#4A5568;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_12" target="m1-implementation-map_16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_36" value="GET on mount" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#4A5568;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_12" target="m1-implementation-map_17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_37" value="ask(question, config, &quot;demo&quot;)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_16" target="m1-implementation-map_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_38" value="consumeQuota" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="m1-implementation-map_18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="450" y="450" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="460" y="450"/>
+                            <mxPoint x="460" y="530"/>
+                            <mxPoint x="1070" y="530"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_39" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_19" target="m1-implementation-map_20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_40" value="the plan (a proposal)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.85;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_20" target="m1-implementation-map_23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_23" target="m1-implementation-map_24" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_42" value="verdict.ok + resolved range" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_24" target="m1-implementation-map_25" edge="1">
+                    <mxGeometry x="-1" y="74" relative="1" as="geometry">
+                        <mxPoint x="-40" y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_25" target="m1-implementation-map_26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_44" value="2 reads, Promise.all" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_25" target="m1-implementation-map_32" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="754" y="950"/>
+                            <mxPoint x="355" y="950"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_45" value="verified rows + flags" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.85;entryY=1;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_26" target="m1-implementation-map_21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_47" value="metric SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#B45309;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" target="m1-implementation-map_25" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="218" y="820"/>
+                            <mxPoint x="690" y="820"/>
+                            <mxPoint x="690" y="787"/>
+                        </Array>
+                        <mxPoint x="218" y="841.9999999999999" as="sourcePoint"/>
+                        <mxPoint x="734.17" y="812.6" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_48" value="thresholds, dedup, partial day" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#B45309;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.623;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="m1-implementation-map_28" target="m1-implementation-map_25" edge="1">
+                    <mxGeometry x="-0.4975" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="535" y="830"/>
+                            <mxPoint x="891" y="830"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_49" value="read_csv, all_varchar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#4A5568;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_33" target="m1-implementation-map_32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;dashed=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_21" target="m1-implementation-map_34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1010" y="657"/>
+                            <mxPoint x="1010" y="1020"/>
+                            <mxPoint x="1122" y="1020"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_52" value="Answer JSON + Set-Cookie" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.6;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_16" target="m1-implementation-map_14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1-implementation-map_50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;dashed=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.35;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_20" target="m1-implementation-map_34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="700" y="657"/>
+                            <mxPoint x="700" y="1020"/>
+                            <mxPoint x="992" y="1020"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m1-implementation-map_46" value="guard fails twice → template" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m1-implementation-map_21" target="m1-implementation-map_22" edge="1">
+                    <mxGeometry x="-0.3333" y="52" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m2-request-path" name="2 · Request path, call by call">
+        <mxGraphModel dx="1025" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1640" pageHeight="2180" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m2-request-path_1" value="Request path, call by call" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_2" value="“What did we spend by channel over the last eight weeks?” — the left column is the actual call, the right column is the actual value it produces. Numbers are from data/, not illustrations." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1550" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_3" value="&lt;b&gt;1 · POST /api/ask&lt;/b&gt;&lt;br&gt;parse and bound the input&lt;br&gt;&lt;i&gt;app/api/ask/route.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="125" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_4" value="BodySchema = { question: string 1..1000, credentials?: {...} }&lt;br&gt;bad JSON      -&gt; 400 &quot;Body must be JSON.&quot;&lt;br&gt;bad shape     -&gt; 400 + z.treeifyError(...)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="130" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_5" value="&lt;b&gt;2 · resolveLlmConfig()&lt;/b&gt;&lt;br&gt;whose key pays for this call&lt;br&gt;&lt;i&gt;src/llm/config.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="243" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_6" value="byok   = Boolean(apiKey &amp;&amp; endpoint)      key without endpoint -&gt; 400&lt;br&gt;shared = AZURE_OPENAI_API_KEY / _ENDPOINT, model from SHARED_MODELS only&lt;br&gt;-&gt; { apiKey, endpoint, apiVersion, model, mode: &quot;shared&quot; }" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="248" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_7" value="&lt;b&gt;3 · identifyDevice() · consumeQuota()&lt;/b&gt;&lt;br&gt;trial allowance, charged before the call&lt;br&gt;&lt;i&gt;src/quota/&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="361" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_8" value="deviceId    signed httpOnly cookie (HMAC, timingSafeEqual)&lt;br&gt;fingerprint sha256(ip + user-agent + accept-language)[0..22]&lt;br&gt;charged against both keys; exhausted -&gt; 429 code:&quot;quota_exhausted&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="366" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_9" value="&lt;b&gt;4 · ask()&lt;/b&gt;&lt;br&gt;getCoverage() + newTrace()&lt;br&gt;&lt;i&gt;src/agent/orchestrate.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="479" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_10" value="first_date 2026-06-08   last_date 2026-09-04   &lt;- this is as_of&lt;br&gt;row_count  2341         (2364 CSV rows; 23 collapse as re-sends/restatements)&lt;br&gt;trace t_…  model, promptVersions, semantic v1, policy v1, compiler v1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="484" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_11" value="&lt;b&gt;5 · plan()&lt;/b&gt; — LLM call 1&lt;br&gt;chat.completions.parse, strict schema&lt;br&gt;&lt;i&gt;src/agent/planner.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="624" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_12" value="{ &quot;plan&quot;: {&lt;br&gt;    &quot;plan_type&quot;: &quot;breakdown&quot;,&lt;br&gt;    &quot;interpretation&quot;: &quot;Spend in USD by channel, the last eight weeks&quot;,&lt;br&gt;    &quot;metrics&quot;: [&quot;spend_usd&quot;], &quot;dimensions&quot;: [&quot;channel&quot;],&lt;br&gt;    &quot;time_range&quot;: {&quot;type&quot;:&quot;relative&quot;,&quot;n&quot;:8,&quot;unit&quot;:&quot;week&quot;,&lt;br&gt;                   &quot;calendar&quot;:false,&quot;offset&quot;:0},&lt;br&gt;    &quot;filters&quot;: [] } }        &lt;- ~4s, ~2,300 input tokens" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="602" width="1130" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_13" value="&lt;b&gt;6 · validatePlan()&lt;/b&gt;&lt;br&gt;a verdict the model cannot overturn&lt;br&gt;&lt;i&gt;src/plan/validate.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="759" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_14" value="metrics/dimensions/filters re-checked against the catalogue (defence in depth)&lt;br&gt;range.empty  -&gt; REFUSE outside_coverage   (a SUM over no rows is 0, not &quot;no data&quot;)&lt;br&gt;verdict = { ok: true, plan, range, comparison: null }" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="764" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_15" value="&lt;b&gt;7 · resolveRange()&lt;/b&gt;&lt;br&gt;relative → concrete, clipped to coverage&lt;br&gt;&lt;i&gt;src/plan/resolve.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="886" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_16" value="calendar:false -&gt; rolling window ending at as_of&lt;br&gt;requested          2026-07-11 .. 2026-09-04&lt;br&gt;resolved           2026-07-11 .. 2026-09-04   clipped false&lt;br&gt;includesPartialDay true    -&gt; stated in the answer and flagged" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="882" width="1130" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_17" value="&lt;b&gt;8 · compile()&lt;/b&gt;&lt;br&gt;plan → SQL. The model writes none of it.&lt;br&gt;&lt;i&gt;src/sql/compile.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1030" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_18" value="SELECT channel AS label,&lt;br&gt;       SUM(spend_usd) AS spend_usd&lt;br&gt;FROM   fact&lt;br&gt;WHERE  tenant_id = $tenant             -- bound, never interpolated&lt;br&gt;  AND  date BETWEEN $from AND $to&lt;br&gt;GROUP  BY 1&lt;br&gt;ORDER  BY spend_usd DESC NULLS LAST" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F3FAF9;strokeColor=#A8D3CC;fontColor=#08302C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1008" width="1130" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_19" value="&lt;b&gt;9 · run() × 2, Promise.all&lt;/b&gt;&lt;br&gt;the answer query and the flag query&lt;br&gt;&lt;i&gt;src/db/duckdb.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1185" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_20" value="label            spend_usd        flagSql (same window, different grain):&lt;br&gt;meta            162,489.73        currency_mismatch      2&lt;br&gt;youtube          98,384.17        unmapped_campaign_id   5&lt;br&gt;google_search    82,443.24        fx_carried_forward    91&lt;br&gt;linkedin         53,112.19        partial_day           11&lt;br&gt;unmapped          1,834.25   &lt;- orphans kept, not dropped     ~40 ms" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1170" width="1130" height="126" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_21" value="&lt;b&gt;10 · validateResult()&lt;/b&gt;&lt;br&gt;coerce, shape, count defects&lt;br&gt;&lt;i&gt;src/verify/resultValidator.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1313" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_22" value="BIGINT -&gt; number (JSON.stringify throws on BigInt), DATE -&gt; ISO string&lt;br&gt;flags[] built from the resolver (partial_day, coverage_clipped)&lt;br&gt;        and from 12 row-level markers counted over THESE rows only" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1318" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_23" value="&lt;b&gt;11 · chooseChart()&lt;/b&gt;&lt;br&gt;by rule, from the plan shape&lt;br&gt;&lt;i&gt;src/chart/spec.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1428" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_24" value="breakdown -&gt; { kind: &quot;bar&quot;, x: &quot;label&quot;, y: [&quot;spend_usd&quot;],&lt;br&gt;               title: plan.interpretation }&lt;br&gt;the picture cannot disagree with the text, because neither chose freely" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1436" width="1130" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_25" value="&lt;b&gt;12 · narrate()&lt;/b&gt; — LLM call 2&lt;br&gt;verified rows → prose&lt;br&gt;&lt;i&gt;src/agent/narrator.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1549" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_26" value="sees: the table (first 60 rows, rounded) + the flag lines. Nothing else.&lt;br&gt;cannot query, cannot recompute, never sees a raw data row.&lt;br&gt;&quot;Meta took the largest share at $162.5k of $398.3k over the window…&quot;   ~5s" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1554" width="1130" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_27" value="&lt;b&gt;13 · checkNarration()&lt;/b&gt;&lt;br&gt;every numeral, re-checked&lt;br&gt;&lt;i&gt;src/verify/narratorGuard.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1676" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_28" value="tokenize the prose -&gt; [162.5k, 398.3k, 5]   (dates stripped first)&lt;br&gt;supported = cell values + column totals + flag counts + row counts&lt;br&gt;          + derived percentages between any two supported values&lt;br&gt;unsupported -&gt; one correction pass naming the figures -&gt; else throw" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1672" width="1130" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_29" value="&lt;b&gt;14 · response&lt;/b&gt;&lt;br&gt;the whole Answer, every time&lt;br&gt;&lt;i&gt;app/api/ask/route.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1802" width="360" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_30" value="{ status, interpretation, finding, plan, sql, result, chart, flags,&lt;br&gt;  trace: { traceId, model, semanticVersion, policyVersion, compilerVersion,&lt;br&gt;           latencyMs: { plan: 4012, query: 41, narrate: 5233, total: 9310 } },&lt;br&gt;  quota } + Set-Cookie when the device id was newly minted" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1798" width="1130" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_3" target="m2-request-path_5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_5" target="m2-request-path_7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_7" target="m2-request-path_9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_9" target="m2-request-path_11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_11" target="m2-request-path_13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_13" target="m2-request-path_15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_15" target="m2-request-path_17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_17" target="m2-request-path_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_19" target="m2-request-path_21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_21" target="m2-request-path_23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_23" target="m2-request-path_25" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_25" target="m2-request-path_27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2-request-path_27" target="m2-request-path_29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m2-request-path_44" value="Latency is ~99% model. DuckDB over 2,341 rows rounds to nothing, which is why the trace splits plan / query / narrate from day one: the first optimisation is prompt caching on the planner system prompt, and the trace is what makes that measurable rather than assumed." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1938" width="1520" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m3-canonical-model" name="3 · Boot and the canonical model">
+        <mxGraphModel dx="1025" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1560" pageHeight="1320" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m3-canonical-model_1" value="Boot and the canonical model — src/sql/views.sql" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_2" value="Every policy in policies.ts becomes a line of SQL exactly once, here, upstream of every query. The agent reads one view: fact." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1470" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_3" value="LLM call" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_4" value="Deterministic code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="218" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_5" value="Versioned definition" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="396" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_6" value="Stop / error exit" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="574" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_7" value="Infrastructure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="752" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_8" value="&lt;b&gt;bootstrap()&lt;/b&gt; — once per process&lt;br&gt;DuckDBInstance.create(&quot;:memory:&quot;)&lt;br&gt;SET preserve_insertion_order = true; SET threads = 1;&lt;br&gt;extractStatements(views.sql) → run each in order&lt;br&gt;&lt;i&gt;src/db/duckdb.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="170" width="420" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_9" value="connPromise ??= bootstrap()   // module-level singleton&lt;br&gt;coverage read once: SELECT * FROM coverage&lt;br&gt;&lt;br&gt;single-threaded + insertion order because the restatement&lt;br&gt;policy is &quot;last row in FILE ORDER wins&quot; — _ord must mean&lt;br&gt;something. tests/ingest.test.ts is the tripwire." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="170" width="480" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_10" value="&lt;b&gt;Why in-process DuckDB&lt;/b&gt;&lt;br&gt;The interface — a &lt;i&gt;fact&lt;/i&gt; view plus a coverage window — is what survives contact with Snowflake or BigQuery. The compiler emits SQL either way, so the trust boundary does not move when the warehouse does." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="1020" y="170" width="480" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_11" value="&lt;b&gt;data/*.csv&lt;/b&gt;&lt;br&gt;&lt;br&gt;ad_performance_daily.csv&lt;br&gt;2364 rows&lt;br&gt;&lt;br&gt;campaigns.csv&lt;br&gt;creatives.csv&lt;br&gt;fx_rates.csv" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="340" width="220" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_12" value="&lt;b&gt;raw_perf&lt;/b&gt; (TABLE)&lt;br&gt;row_number() OVER () AS _ord&lt;br&gt;all_varchar = true" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="340" width="250" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_13" value="&lt;b&gt;perf_typed&lt;/b&gt;&lt;br&gt;TRY_CAST, not CAST — a malformed&lt;br&gt;number becomes NULL and is counted,&lt;br&gt;rather than aborting the answer" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="460" width="250" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_14" value="&lt;b&gt;perf_exact_dedup&lt;/b&gt;&lt;br&gt;GROUP BY ALL, MIN(_ord)&lt;br&gt;an exact re-send is the same fact twice" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="600" width="250" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_15" value="&lt;b&gt;perf_resolved&lt;/b&gt;&lt;br&gt;row_number() OVER (PARTITION BY&lt;br&gt;date, campaign_id, creative_id&lt;br&gt;ORDER BY _ord DESC) = 1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="720" width="250" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_16" value="&lt;b&gt;campaigns · creatives&lt;/b&gt;&lt;br&gt;trimmed, upper-cased ids,&lt;br&gt;typed dates and budgets" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="340" width="260" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_17" value="&lt;b&gt;fx_typed&lt;/b&gt;&lt;br&gt;date · currency · rate_to_usd" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="480" width="260" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_18" value="&lt;b&gt;fx_spine&lt;/b&gt;&lt;br&gt;a dense date × currency grid,&lt;br&gt;last_value(… IGNORE NULLS) OVER …&lt;br&gt;+ rate_carried_forward flag" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="600" width="260" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_19" value="&lt;b&gt;fact&lt;/b&gt; — the one view every query reads&lt;br&gt;&lt;br&gt;tenant_id (&#39;demo&#39;, a real column)&lt;br&gt;campaign_name · channel · objective&lt;br&gt;creative_name · format · daily_budget&lt;br&gt;spend_usd = spend × rate_to_usd&lt;br&gt;revenue_usd = revenue × rate_to_usd&lt;br&gt;&lt;br&gt;+ 8 row-level defect markers:&lt;br&gt;is_unmapped_campaign · is_unmapped_creative&lt;br&gt;is_currency_mismatch · is_funnel_violation&lt;br&gt;is_negative_spend · is_revenue_without_spend&lt;br&gt;is_after_campaign_end · has_null_measure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="470" width="330" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_20" value="&lt;b&gt;coverage&lt;/b&gt;&lt;br&gt;MIN(date) · MAX(date) · COUNT(*)&lt;br&gt;2026-06-08 .. 2026-09-04 · 2341" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="810" width="330" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_21" value="read_csv" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_11" target="m3-canonical-model_12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_11" target="m3-canonical-model_16" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="310" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m3-canonical-model_23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.55;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_11" target="m3-canonical-model_17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="310" y="525"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m3-canonical-model_24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_12" target="m3-canonical-model_13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_13" target="m3-canonical-model_14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_14" target="m3-canonical-model_15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_17" target="m3-canonical-model_18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_28" value="LEFT JOIN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.9;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_15" target="m3-canonical-model_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_29" value="campaign owns the currency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.15;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_16" target="m3-canonical-model_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_30" value="ON date AND currency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.55;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_18" target="m3-canonical-model_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#B45309;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m3-canonical-model_19" target="m3-canonical-model_20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_32" value="POLICIES.collapseExactDuplicates  true            August conversions: 5,584 — querying raw rows gives 5,650&lt;br&gt;POLICIES.restatement              last_write_wins same key, new numbers = a restatement, not a duplicate&lt;br&gt;POLICIES.currencySource           &quot;campaign&quot;      trusting the row column adds ~$63k of phantom spend&lt;br&gt;POLICIES.fxGapPolicy              &quot;carry_forward&quot; dropping loses spend; defaulting to 1.0 converts INR at ~90×&lt;br&gt;POLICIES.orphanPolicy             &quot;report_separately&quot;  unmapped: $1,834.25 kept under its own label&lt;br&gt;POLICIES.nullPolicy               &quot;preserve&quot;      nulls stay null, never coerced to 0&lt;br&gt;POLICIES.partialFinalDay          true            2026-09-04 is an incomplete load" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F3FAF9;strokeColor=#A8D3CC;fontColor=#08302C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="880" width="900" height="128" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_33" value="&lt;b&gt;The judgement that changes a number&lt;/b&gt;&lt;br&gt;Each policy above has a defensible alternative that produces a &lt;i&gt;different&lt;/i&gt; answer. That is exactly why it is a reviewed constant with a named test, and not a sentence in a prompt." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="940" width="330" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m3-canonical-model_34" value="Three of these are only visible because the pipeline is staged: duplicates_collapsed and restatement_applied are counted by differencing perf_typed → perf_exact_dedup → perf_resolved, because by the time a row reaches fact the duplicate is gone — and that is the point." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1018" width="900" height="78" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m4-plan-grammar" name="4 · The plan grammar, as compiled">
+        <mxGraphModel dx="1025" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1460" pageHeight="1080" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m4-plan-grammar_1" value="The plan grammar, as compiled" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_2" value="The entire surface the planner LLM controls, and what deterministic code does with each shape. Anything not expressible here is refused, not improvised." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_3" value="plan_type" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="140" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_4" value="what the model fills" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="140" width="260" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_5" value="window comes from" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="140" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_6" value="emitter in compile.ts" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="140" width="220" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_7" value="result columns" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="140" width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_8" value="chart" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="140" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_9" value="&lt;b&gt;single_value&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="180" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_10" value="metrics[1..] · time_range · filters" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="180" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_11" value="plan.time_range" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="180" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_12" value="emitSingleValue" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="180" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_13" value="one row: the metrics (+ ratio components)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="180" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_14" value="stat" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="180" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_15" value="&lt;b&gt;breakdown&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="252" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_16" value="metrics · dimensions[1..2] · time_range" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="252" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_17" value="plan.time_range" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="252" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_18" value="emitBreakdown" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="252" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_19" value="label (, label_2) + metrics, ORDER BY metric[0] DESC" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="252" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_20" value="bar" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="252" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_21" value="&lt;b&gt;ranking&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="324" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_22" value="metrics · dimensions[1] · order_by · direction · limit ≤ 50" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="324" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_23" value="plan.time_range" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="324" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_24" value="emitRanking" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="324" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_25" value="label + metrics; order_by is always selected" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="324" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_26" value="hbar" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="324" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_27" value="&lt;b&gt;time_series&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="396" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_28" value="metrics · grain · dimensions[0..1]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="396" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_29" value="plan.time_range" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="396" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_30" value="emitTimeSeries" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="396" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_31" value="date (+ label) + metrics, ORDER BY date" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="396" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_32" value="line" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="396" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_33" value="&lt;b&gt;compare_periods&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="468" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_34" value="metrics · time_range · comparison · dimensions[0..1]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="468" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_35" value="both windows resolved" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="468" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_36" value="emitComparePeriods" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="468" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_37" value="label = &#39;current&#39; | &#39;prior&#39;, UNION ALL" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="468" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_38" value="grouped bar" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="468" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_39" value="&lt;b&gt;diagnose_drop&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="540" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_40" value="metric · target_date (&quot;latest&quot;) · baseline_days (7)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="540" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_41" value="POLICY: target day + trailing baseline" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="540" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_42" value="emitDiagnoseDrop" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="540" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_43" value="label, baseline_per_day, target_value, delta, target_spend, target_rows, baseline_rows_per_day" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="540" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_44" value="grouped bar" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="540" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_45" value="&lt;b&gt;turn_off_candidate&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="612" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_46" value="nothing — no fields at all" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="612" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_47" value="POLICY: trailing 28 days" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="612" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_48" value="emitTurnOff" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="612" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_49" value="label + roas, cpa, spend_usd, revenue_usd, conversions" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="612" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_50" value="hbar" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="612" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_51" value="&lt;b&gt;budget_pacing&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="684" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_52" value="time_range only" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="684" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_53" value="plan.time_range (prompt: last complete week)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="684" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_54" value="emitBudgetPacing" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="684" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_55" value="label, label_currency, spend_per_day, daily_budget, pacing_pct" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="684" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_56" value="hbar" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="684" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_57" value="&lt;b&gt;unanswerable&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="756" width="180" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_58" value="reason (5 codes) · missing" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="756" width="260" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_59" value="— no window —" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="756" width="210" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_60" value="CompileError if it ever reaches here" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="756" width="220" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_61" value="no SQL, no rows — compose.refusal() writes the prose" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="756" width="330" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_62" value="none" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="756" width="110" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_63" value="&lt;b&gt;Two shapes where “the model decides” quietly stops being true&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;diagnose_drop&lt;/b&gt; always counts rows on both sides of the comparison, whether or not anyone asked. Row count is what separates “performance collapsed” from “the load was incomplete”, and the model is not trusted to remember to ask for it.&lt;br&gt;&lt;br&gt;&lt;b&gt;turn_off_candidate&lt;/b&gt; carries no fields. TURN_OFF_POLICY supplies every threshold — 28 days, objective = conversions, ≥ $5,000 spend, rank by ROAS ascending — and they are stated back to the user with the answer, because the criteria &lt;i&gt;are&lt;/i&gt; the answer." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="852" width="690" height="172" as="geometry"/>
+                </mxCell>
+                <mxCell id="m4-plan-grammar_64" value="Three rules hold across all eight emitters:&lt;br&gt;&lt;br&gt;1. Metric SQL comes from the catalogue. A ratio is&lt;br&gt;   SUM(a)/SUM(b) after aggregation — never AVG(a/b),&lt;br&gt;   which is a different and usually wrong number.&lt;br&gt;2. Values are bound ($tenant, $from, $f0); identifiers&lt;br&gt;   come from fixed maps. Free-form text never reaches SQL.&lt;br&gt;3. The SQL emitted is the SQL that runs AND the SQL the&lt;br&gt;   user is shown. There is no second &quot;explanation&quot; query&lt;br&gt;   that could drift from the real one." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#F3FAF9;strokeColor=#A8D3CC;fontColor=#08302C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="852" width="670" height="172" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m5-exits" name="5 · Every exit">
+        <mxGraphModel dx="1025" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1420" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m5-exits_1" value="Every exit — what the caller can actually receive" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_2" value="Five terminal states inside ask(), six HTTP failures around it. Nothing falls through, and no exit path invents a figure." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1410" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_3" value="LLM call" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_4" value="Deterministic code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="218" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_5" value="Versioned definition" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="396" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_6" value="Stop / error exit" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="574" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_7" value="Infrastructure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="752" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_8" value="POST /api/ask" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;rounded=1;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="165" width="340" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_9" value="&lt;b&gt;400&lt;/b&gt; Body must be JSON." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="250" width="300" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_10" value="BodySchema.safeParse" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="250" width="340" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_11" value="&lt;b&gt;400&lt;/b&gt; Invalid request. + z.treeifyError" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="250" width="420" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_12" value="resolveLlmConfig()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="345" width="340" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_13" value="&lt;b&gt;400&lt;/b&gt; MissingCredentialsError · ModelNotAllowedError" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="345" width="420" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_14" value="consumeQuota(device, mode)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="440" width="340" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_15" value="&lt;b&gt;429&lt;/b&gt; quota_exhausted (+ Set-Cookie)&lt;br&gt;not charged — retrying cannot inflate the counter" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="440" width="420" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_16" value="plan() — LLM call 1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="540" width="340" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_17" value="validatePlan()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="640" width="340" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_18" value="&lt;b&gt;EXIT A · status &quot;refused&quot;&lt;/b&gt;&lt;br&gt;finding = compose.refusal(verdict, coverage)&lt;br&gt;sql null · result null · chart null · flags []&lt;br&gt;&lt;b&gt;the narrator is never called&lt;/b&gt; — narrate: 0 ms&lt;br&gt;5 reasons: no_such_entity · no_such_dimension ·&lt;br&gt;no_such_metric · outside_coverage · not_analytical" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="640" width="420" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_19" value="compile() → run() × 2" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="740" width="340" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_20" value="&lt;b&gt;500&lt;/b&gt; Internal error. (CompileError, DuckDB)&lt;br&gt;logged server-side, internals not leaked" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="740" width="420" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_21" value="result.rows.length === 0 ?" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="840" width="340" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_22" value="&lt;b&gt;EXIT B · answered, empty&lt;/b&gt;&lt;br&gt;“…this is an empty result rather than a missing one — the filters excluded every row.”&lt;br&gt;deliberately &lt;i&gt;not&lt;/i&gt; the same answer as a refusal" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="840" width="420" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_23" value="narrate() — LLM call 2&lt;br&gt;+ checkNarration()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="950" width="340" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_24" value="&lt;b&gt;EXIT C · answered, narrated&lt;/b&gt;&lt;br&gt;guard passed on the first pass" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="950" width="420" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_25" value="&lt;b&gt;EXIT D · answered, narrated on retry&lt;/b&gt;&lt;br&gt;guard named the bad figures; one correction pass" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="1040" width="420" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_26" value="&lt;b&gt;EXIT E · answered, template finding&lt;/b&gt;&lt;br&gt;guard rejected twice, or the provider failed. &lt;br&gt;try/catch in ask() → templateFinding(): uglier prose, &lt;b&gt;identical figures&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="1130" width="420" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#4A5568;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_8" target="m5-exits_10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_28" value="unparseable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_10" target="m5-exits_9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_29" value="invalid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_10" target="m5-exits_11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_10" target="m5-exits_12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_12" target="m5-exits_13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_12" target="m5-exits_14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_33" value="spent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_14" target="m5-exits_15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_34" value="granted" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_14" target="m5-exits_16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_35" value="a proposal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_16" target="m5-exits_17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_36" value="verdict.ok === false" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#B45309;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_17" target="m5-exits_18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_37" value="ok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_17" target="m5-exits_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_38" value="throws" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_19" target="m5-exits_20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_19" target="m5-exits_21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_40" value="yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_21" target="m5-exits_22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_41" value="no" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5-exits_21" target="m5-exits_23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_23" target="m5-exits_24" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_43" value="unsupported figures" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_23" target="m5-exits_25" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_44" value="throws" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#C2410C;dashed=1;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5-exits_23" target="m5-exits_26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_45" value="&lt;b&gt;Read the five exits as one property&lt;/b&gt;&lt;br&gt;&lt;br&gt;A · the refusal is composed from the validator&#39;s verdict and never goes near a model. Q5 (“how do we compare to competitors?”) takes this path with &lt;b&gt;one&lt;/b&gt; model call, not two.&lt;br&gt;&lt;br&gt;B · “no rows matched” and “I cannot answer that” are different facts. Collapsing them is how a system starts sounding confident about nothing.&lt;br&gt;&lt;br&gt;C/D/E · losing the narrator costs style and nothing else. The figures were never the model&#39;s to produce, so the degradation is prose quality — not correctness, and not availability." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="990" width="420" height="252" as="geometry"/>
+                </mxCell>
+                <mxCell id="m5-exits_46" value="One asymmetry worth noticing: a provider failure during PLANNING fails the request (there is no plan, so there is nothing to answer), while a provider failure during NARRATION does not — the try/catch around narrate() falls through to the template over the same verified rows. That is the trust boundary showing up as an availability property." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="1250" width="1380" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m6-barriers" name="6 · Where a wrong number is stopped">
+        <mxGraphModel dx="694" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1560" pageHeight="1060" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m6-barriers_1" value="Where a wrong number is stopped — in code, with the test that proves it" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_2" value="Eight barriers. Each catches a distinct class of defect, none of them asks a model to check a model, and each names a concrete wrong answer it prevents." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1470" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_3" value="barrier" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="145" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_4" value="implemented in" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="145" width="250" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_5" value="what it catches" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="145" width="300" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_6" value="the wrong answer it prevents" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="145" width="480" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_7" value="covered by" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="145" width="250" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_8" value="&lt;b&gt;1 · Structured output&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="185" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_9" value="llm/client.ts structured()&lt;br&gt;plan/wire.ts envelope" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="185" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_10" value="a response the compiler cannot read" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="185" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_11" value="SQL compiled from a malformed or invented plan shape" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="185" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_12" value="compile.test.ts (18)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="185" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_13" value="&lt;b&gt;2 · Plan validator&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="273" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_14" value="plan/validate.ts validatePlan()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="273" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_15" value="a metric, dimension or filter field not in the catalogue; an empty window" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="273" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_16" value="“$0 spent in May” — a SUM over zero rows reads as “we spent nothing”, not “there is no data”" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="273" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_17" value="validate.test.ts (8)&lt;br&gt;golden n5_outside_coverage" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="273" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_18" value="&lt;b&gt;3 · Range resolver&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="361" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_19" value="plan/resolve.ts resolveRange()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="361" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_20" value="the partial final day; a window running off the end of coverage" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="361" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_21" value="“conversions down 12% week on week” — 1,092 vs 1,245 — when the real figure is 1,248 vs 1,246, +0.2%" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="361" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_22" value="resolve.test.ts (9)&lt;br&gt;golden t1_week_over_week" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="361" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_23" value="&lt;b&gt;4 · Canonical model&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="449" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_24" value="sql/views.sql&lt;br&gt;semantic/policies.ts" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="449" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_25" value="re-sends, restatements, FX gaps, orphan rows, the wrong currency column" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="449" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_26" value="August conversions 5,650 instead of 5,584 — inflated by 66 re-sent rows; or meta $186,562 instead of $162,490 by trusting the row currency" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="449" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_27" value="canonical.test.ts (9)&lt;br&gt;ingest.test.ts (5)&lt;br&gt;golden t6" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="449" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_28" value="&lt;b&gt;5 · SQL compiler&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="537" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_29" value="sql/compile.ts" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="537" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_30" value="ratio aggregation, the tenant predicate, unbound values" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="537" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_31" value="AVG(roas per row) instead of SUM(revenue)/SUM(spend); a query path that forgot the tenant filter" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="537" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_32" value="compile.test.ts (18)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="537" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_33" value="&lt;b&gt;6 · Result validator&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="625" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_34" value="verify/resultValidator.ts&lt;br&gt;verify/flags.ts" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="625" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_35" value="BigInt leakage, and defects touching exactly these rows" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="625" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_36" value="a ROAS quoted with no note that 91 rows used a carried-forward FX rate, or that 5 rows have no campaign" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="625" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_37" value="golden.test.ts must_flag" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="625" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_38" value="&lt;b&gt;7 · Narrator guard&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="713" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_39" value="verify/narratorGuard.ts checkNarration()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="713" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_40" value="a numeral in the prose that is not on the table" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="713" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_41" value="“Meta spent about $180k” when the table says $162,489.73 — the single failure the whole design exists to prevent" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="713" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_42" value="narratorGuard.test.ts (18)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="713" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_43" value="&lt;b&gt;8 · Policy templates&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="801" width="200" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_44" value="semantic/policies.ts TURN_OFF_POLICY" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="801" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_45" value="a judgement question composed freely by the model" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="801" width="300" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_46" value="“turn off linkedin_thought_leadership” — an awareness campaign at ROAS 0.00 that was never bought for revenue; or by CPA, one of the most profitable" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="801" width="480" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_47" value="golden q4_which_to_turn_off" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="801" width="250" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_48" value="&lt;b&gt;Fail closed, and fail loudly.&lt;/b&gt; Barrier 2 duplicates what structured output already guarantees. That is deliberate: if the zod schema and the catalogue ever drift apart, the mismatch surfaces as a named refusal rather than as SQL over a column that does not exist." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="913" width="740" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="m6-barriers_49" value="&lt;b&gt;What is NOT a barrier:&lt;/b&gt; asking the model to double-check itself. Every check above is ordinary code over the same rows the user is shown. A second opinion from the same distribution is not verification — it is a correlated failure wearing a second hat." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="913" width="720" height="96" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m7-the-check" name="7 · The automated check">
+        <mxGraphModel dx="966" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1560" pageHeight="1320" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m7-the-check_1" value="The automated check — two layers over one seam" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_2" value="“Does the agent still answer correctly after I change something?” splits into two questions with different costs, so it is two test layers over the same function." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1470" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_3" value="LLM call" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_4" value="Deterministic code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="218" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_5" value="Versioned definition" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="396" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_6" value="Stop / error exit" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="574" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_7" value="Infrastructure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="752" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_8" value="&lt;b&gt;execute(plan, coverage, tenantId)&lt;/b&gt;&lt;br&gt;validate → compile → run → validate → chart&lt;br&gt;&lt;i&gt;src/agent/execute.ts&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="175" width="420" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_9" value="The seam exists so the check runs over exactly the code the API runs — not a reimplementation that can quietly agree with itself while both are wrong." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="285" width="420" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_10" value="&lt;b&gt;Layer 1 · deterministic&lt;/b&gt; — &lt;i&gt;npm test&lt;/i&gt;&lt;br&gt;&lt;br&gt;Each golden case&#39;s &lt;b&gt;expected plan&lt;/b&gt; is fed straight to execute(). No LLM, no API key, no network, no flake.&lt;br&gt;&lt;br&gt;&lt;b&gt;108 passing assertions&lt;/b&gt; across 10 files, in seconds, for free.&lt;br&gt;&lt;br&gt;This is the layer that catches the regressions that actually corrupt answers: a changed dedup rule, a dropped FX join, a broken coverage clip." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="360" width="620" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_11" value="&lt;b&gt;Layer 2 · the planner&lt;/b&gt; — &lt;i&gt;GOLDEN_LLM=1 npm run test:llm&lt;/i&gt;&lt;br&gt;&lt;br&gt;Runs the real model over all 12 questions and asserts the &lt;b&gt;plan shape&lt;/b&gt; — type, metrics, resolved window — never the prose. Prose is not a regression surface; a plan is.&lt;br&gt;&lt;br&gt;&lt;b&gt;Scores 12/12&lt;/b&gt; on the current prompt.&lt;br&gt;&lt;br&gt;Opt-in, because it costs money and can flake on a provider hiccup. Keeping it out of the default run is what lets &lt;i&gt;npm test&lt;/i&gt; stay free — and therefore actually run." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="360" width="620" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_12" value="expected plan in" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m7-the-check_8" target="m7-the-check_10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#7A4FD1;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m7-the-check_8" target="m7-the-check_11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_14" value="examples/golden.jsonl — one case per line, 12 cases&lt;br&gt;{&lt;br&gt;  &quot;id&quot;: &quot;t6_august_conversions_dedup&quot;,&lt;br&gt;  &quot;question&quot;: &quot;How many conversions did we get in August?&quot;,&lt;br&gt;  &quot;agent_plan&quot;: { ... the plan a correct planner emits ... },&lt;br&gt;  &quot;expect&quot;: {&lt;br&gt;    &quot;values&quot;: { &quot;conversions&quot;: 5584 },&lt;br&gt;    &quot;tolerance_pct&quot;: 0.1,&lt;br&gt;    &quot;must_flag&quot;: [&quot;duplicates_collapsed&quot;],&lt;br&gt;    &quot;guard&quot;: &quot;querying raw rows returns 5650, inflated by&lt;br&gt;              66 re-sent duplicate rows&quot;&lt;br&gt;  }&lt;br&gt;}" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="650" width="620" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_15" value="&lt;b&gt;“guard” is the field that makes this a check and not a snapshot&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;i&gt;expected 5584, got 5650&lt;/i&gt; tells you a number moved.&lt;br&gt;&lt;i&gt;this is the case that prevents: inflated by 66 re-sent duplicate rows&lt;/i&gt; tells you which policy you just broke.&lt;br&gt;&lt;br&gt;Every failure message quotes it. A golden set whose failures do not name the wrong answer they were written to catch decays into a set of numbers people re-bless.&lt;br&gt;&lt;br&gt;Tolerance is &lt;i&gt;max(relative %, half the last written digit)&lt;/i&gt; — 1% of 0.2 would demand four digits of agreement from a figure only ever written to one." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="650" width="620" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_16" value="the 12 cases — and the wrong answer each one exists to prevent" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="940" width="1380" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_17" value="q1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="980" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_18" value="spend by channel, 8 weeks" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="980" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_19" value="row currency → meta 186,562, channels reorder" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="980" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_20" value="q2" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="980" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_21" value="top campaign this quarter" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="980" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_22" value="no FX → meta_prospecting_in (&#39;3810994&#39; INR) wins" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="980" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_23" value="q3" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1024" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_24" value="conversions cliff" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="1024" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_25" value="naming a campaign for what is a partial load" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1024" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_26" value="q4" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="1024" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_27" value="which to turn off" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="1024" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_28" value="ROAS over all → an awareness campaign at 0.00" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="1024" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_29" value="q5" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1068" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_30" value="competitors" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="1068" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_31" value="any competitor number at all" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1068" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_32" value="t1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="1068" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_33" value="last week vs the week before" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="1068" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_34" value="partial day → −12.3% decline that does not exist" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="1068" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_35" value="t4" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1112" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_36" value="ROAS last quarter" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="1112" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_37" value="2.91 labelled Q2 with ⅔ of the quarter missing" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1112" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_38" value="t6" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="1112" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_39" value="August conversions" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="1112" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_40" value="5,650 — 66 duplicate rows" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="1112" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_41" value="t7" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1156" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_42" value="best day" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="1156" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_43" value="by conversions → a funnel-violating row (205 of 408)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1156" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_44" value="n2" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="1156" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_45" value="break down by device" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="1156" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_46" value="grouping by a substitute without saying so" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="1156" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_47" value="n5" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1200" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_48" value="May&#39;s spend" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="1200" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_49" value="returning $0" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1200" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_50" value="n13" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="1200" width="70" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_51" value="budget caps" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="1200" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_52" value="over-refusing an answerable question" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=middle;fontSize=11;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="1200" width="370" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m7-the-check_53" value="Change safety, concretely: a prompt edit is a production change. Layer 2 is the gate — prompt v7 scores 12/12, v8 scores 10/12, v8 is rejected. Every answer also carries semanticVersion, policyVersion, planGrammarVersion, compilerVersion and both prompt versions, so a disputed number is a diff rather than an argument." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1252" width="1380" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m8-credentials" name="8 · Credentials, quota, isolation">
+        <mxGraphModel dx="966" dy="856" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1160" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m8-credentials_1" value="Credentials, quota, and what never crosses a boundary" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_2" value="The MVP is single-tenant and unauthenticated by design — but it handles somebody else&#39;s API key, so the rules are narrow and written down rather than assumed." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1410" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_3" value="LLM call" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#EFE8FF;strokeColor=#7A4FD1;fontColor=#2B1A55;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_4" value="Deterministic code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="218" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_5" value="Versioned definition" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="396" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_6" value="Stop / error exit" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDE8E0;strokeColor=#C2410C;fontColor=#5A1D08;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="574" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_7" value="Infrastructure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="752" y="108" width="168" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_8" value="&lt;b&gt;Browser&lt;/b&gt;&lt;br&gt;localStorage key &lt;i&gt;da.azure.credentials&lt;/i&gt;&lt;br&gt;re-sent per request, so the user revokes by clearing it&lt;br&gt;read wrapped in try/catch — private mode falls back to the shared key" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="175" width="400" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_9" value="&lt;b&gt;POST body only&lt;/b&gt;&lt;br&gt;never a query string — those land in access logs, browser history and referrer headers" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="175" width="400" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_10" value="&lt;b&gt;Server, for one request&lt;/b&gt;&lt;br&gt;never written to disk · never logged · never in the trace · never echoed back&lt;br&gt;no server-side store at all" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="1020" y="175" width="420" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#4A5568;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m8-credentials_8" target="m8-credentials_9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m8-credentials_9" target="m8-credentials_10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_13" value="resolveLlmConfig(credentials)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="355" width="400" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m8-credentials_9" target="m8-credentials_13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_15" value="&lt;b&gt;mode: &quot;byok&quot;&lt;/b&gt; — key AND endpoint supplied&lt;br&gt;&lt;br&gt;• any deployment name is allowed — they know their resource, and they are paying&lt;br&gt;• quota is &lt;b&gt;not&lt;/b&gt; charged: UNLIMITED&lt;br&gt;• a key &lt;i&gt;without&lt;/i&gt; an endpoint is a 400, not a fallback — otherwise it silently bills us while looking to the user like their own account" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="465" width="620" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_16" value="&lt;b&gt;mode: &quot;shared&quot;&lt;/b&gt; — the server&#39;s trial key&lt;br&gt;&lt;br&gt;• deployment is &lt;b&gt;not&lt;/b&gt; caller-controlled — only SHARED_MODELS&lt;br&gt;&amp;nbsp;&amp;nbsp;(an open deployment field on our key is an invitation to bill us on the most expensive model in the resource)&lt;br&gt;• 5 requests per device, charged &lt;b&gt;before&lt;/b&gt; the model call — refunding on error turns the quota into a free retry loop" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="465" width="640" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_17" value="apiKey &amp;&amp; endpoint" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m8-credentials_13" target="m8-credentials_15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_18" value="neither" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#B45309;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m8-credentials_13" target="m8-credentials_16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_19" value="&lt;b&gt;Device identity — two weak signals, deliberately&lt;/b&gt;&lt;br&gt;&lt;br&gt;1 · signed httpOnly cookie (HMAC-SHA256, timingSafeEqual) — survives restarts, dies with site data&lt;br&gt;2 · sha256(ip + user-agent + accept-language) — survives cookie clearing, collides behind one NAT&lt;br&gt;&lt;br&gt;Charged against &lt;b&gt;both&lt;/b&gt;, refused if &lt;b&gt;either&lt;/b&gt; is spent: biased toward false refusals rather than free rides. An honest user who collides supplies their own key and is unblocked." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="705" width="640" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#B45309;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m8-credentials_16" target="m8-credentials_19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_21" value="What a browser CANNOT do, stated because it gets asked:&lt;br&gt;&lt;br&gt;read a MAC address.  There is no web API for it and there&lt;br&gt;deliberately never has been — a hardware serial surviving&lt;br&gt;every reset is a permanent supercookie.  os.networkInterfaces()&lt;br&gt;on the server returns the SERVER&#39;s MAC, identical for every&lt;br&gt;visitor.&lt;br&gt;&lt;br&gt;So this is a speed bump, not a security control.  A private&lt;br&gt;window plus a VPN resets it, and that is acceptable: five&lt;br&gt;requests is not worth defending harder.  The real answer is&lt;br&gt;accounts, which the brief scopes out." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="705" width="620" height="212" as="geometry"/>
+                </mxCell>
+                <mxCell id="m8-credentials_22" value="&lt;b&gt;Isolation, in an MVP with exactly one tenant&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;i&gt;tenant_id&lt;/i&gt; is a real column on &lt;b&gt;fact&lt;/b&gt; and a &lt;b&gt;required argument&lt;/b&gt; to compile() — it throws without one. Every emitter opens its WHERE clause with &lt;i&gt;tenant_id = $tenant&lt;/i&gt;, and the flag query carries it too. The value is &lt;i&gt;&quot;demo&quot;&lt;/i&gt;, passed from ask(), never from the model and never from the request body.&lt;br&gt;&lt;br&gt;That is the whole point of writing it now: a tenant filter retrofitted later is a filter someone forgets on one query path. The predicate is a no-op today and a load-bearing one the day auth exists — and the interface does not move.&lt;br&gt;&lt;br&gt;Known gaps, stated: trial counters are in-memory, so they reset on restart and a second instance grants a fresh allowance (UsageStore is an interface; Redis is a one-file swap). x-forwarded-for is client-settable and is treated as a hint, never as authentication." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="935" width="1380" height="180" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="m9-answer-contract" name="9 · The answer contract">
+        <mxGraphModel dx="1932" dy="1712" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1160" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="m9-answer-contract_1" value="The answer contract — “show its work” as a type, not a convention" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=22;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1200" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_2" value="Every answer carries all of it. The UI abbreviates; it never omits. If a field cannot be produced, it is null and the status says why." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="1410" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_3" value="interface Answer {&lt;br&gt;  status:         &quot;answered&quot; | &quot;refused&quot;&lt;br&gt;  interpretation: string      // one line, read first&lt;br&gt;  finding:        string      // &lt;= 3 sentences&lt;br&gt;  plan:           Plan        // what the model chose&lt;br&gt;  sql:            string|null // the query that ran&lt;br&gt;  result: {&lt;br&gt;    columns: readonly string[]&lt;br&gt;    rows:    readonly ResultRow[]&lt;br&gt;    range:   [string, string] | null&lt;br&gt;  } | null&lt;br&gt;  chart:  ChartSpec | null    // kind chosen by rule&lt;br&gt;  flags:  readonly Flag[]     // defects on THESE rows&lt;br&gt;  trace: {&lt;br&gt;    traceId, askedAt, question,&lt;br&gt;    provider: &quot;azure-openai&quot;, model,&lt;br&gt;    credentialMode: &quot;byok&quot; | &quot;shared&quot;,&lt;br&gt;    plannerPromptVersion, narratorPromptVersion,&lt;br&gt;    semanticVersion, policyVersion,&lt;br&gt;    planGrammarVersion, compilerVersion,&lt;br&gt;    dataVersion,                // coverage window&lt;br&gt;    latencyMs: { plan, query, narrate, total }&lt;br&gt;  }&lt;br&gt;}&lt;br&gt;&lt;br&gt;// src/agent/types.ts" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FFFFFF;strokeColor=#CBD5E0;fontColor=#1A202C;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=11;spacingLeft=12;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="150" width="620" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_4" value="&lt;b&gt;Interpreted as:&lt;/b&gt; …&lt;br&gt;the model wrote the “what”; the dates were appended by code, because the model does not know what its own relative range resolved to" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="150" width="700" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_5" value="&lt;b&gt;The finding&lt;/b&gt;&lt;br&gt;2–3 sentences. Every numeral in it has been re-checked against the rows below." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="240" width="700" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m9-answer-contract_4" target="m9-answer-contract_5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_7" value="&lt;b&gt;The chart&lt;/b&gt;&lt;br&gt;kind, x and y come from the server. Recharts only draws it, so the picture cannot disagree with the text." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="330" width="700" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m9-answer-contract_5" target="m9-answer-contract_7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_9" value="&lt;b&gt;Flags&lt;/b&gt;&lt;br&gt;only the defects that touched these rows. A caveat on every answer is a caveat nobody reads." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="460" width="700" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m9-answer-contract_7" target="m9-answer-contract_9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_11" value="&lt;b&gt;Tabs: Rows | SQL | Plan&lt;/b&gt;&lt;br&gt;present on every answer but folded away — six open panels is a debugger, not a product. The SQL shown is the SQL that ran." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="570" width="700" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m9-answer-contract_9" target="m9-answer-contract_11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_13" value="&lt;b&gt;Trace footer&lt;/b&gt;&lt;br&gt;traceId · model · plan/query/narrate/total · semantic v1 · policy v1 · compiler v1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E4F2F0;strokeColor=#0E6E63;fontColor=#08302C;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="700" width="700" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;strokeColor=#0E6E63;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m9-answer-contract_11" target="m9-answer-contract_13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_15" value="&lt;b&gt;A refusal uses the same contract&lt;/b&gt;&lt;br&gt;status &quot;refused&quot;, finding from compose.refusal(), and sql / result / chart all null. The UI opens on the &lt;b&gt;Plan&lt;/b&gt; tab instead of &lt;b&gt;Rows&lt;/b&gt;, so the user can see that the model classified the question rather than that the system fell over." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#FDF1DE;strokeColor=#B45309;fontColor=#4A2A08;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="800" width="700" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_16" value="&lt;b&gt;Why the whole contract, on every answer&lt;/b&gt;&lt;br&gt;&lt;br&gt;The brief&#39;s requirement is “show its work”. Making that a type rather than a debug flag has three consequences that matter:&lt;br&gt;&lt;br&gt;• the SQL in the response is the SQL that executed — there is no second explanation query that can drift from the real one;&lt;br&gt;• a disputed number is reproducible from the trace alone: same plan, same semantic version, same policy version, same coverage window;&lt;br&gt;• the golden runner and the UI consume the same object, so what the tests assert is what the user sees." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;fillColor=#E8EBEF;strokeColor=#4A5568;fontColor=#1A202C;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="660" width="620" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="m9-answer-contract_17" value="Known gaps, in the order I would fix them: (1) no conversation memory — “what about Meta?” as a follow-up is not resolved against the previous question, and it is the most common real interaction; (2) diagnose_drop decomposes by channel only — campaign-level is a second CTE, not a redesign; (3) a failed request still spends a trial allowance; (4) ambiguity resolution is unmeasured — Layer 2 asserts plan shape and would not catch a drift in metric choice; (5) trial counts are in memory; (6) channel_outage cannot tell an outage from a channel that was simply not running." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="960" width="1380" height="90" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

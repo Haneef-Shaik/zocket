@@ -8,7 +8,7 @@
  * This is the larger of the two places a wrong model decision is *visible*: if
  * it plans the wrong metric the user sees it in the interpretation line and the
  * plan JSON immediately. That visibility is exactly why this step is allowed to
- * be model-decided at all -- see HLD.md §5.
+ * be model-decided at all -- see Design.md §5.
  */
 
 import type { Plan } from "@/plan/schema";

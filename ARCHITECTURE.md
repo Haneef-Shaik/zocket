@@ -10,6 +10,13 @@ draws it. Where a sentence said it faster, there is a sentence instead of a pict
 Every figure and payload here was taken from the code and the data in `data/`, not paraphrased
 from the design doc. The numbers in Figure 2 are the real result of the real query.
 
+**This file draws the design. [`mvp-architecture.drawio`](./mvp-architecture.drawio) draws the
+build** — 9 pages in which every box is a file or a function in this repository: the module map,
+the request path call by call, the `views.sql` ingest DAG, the plan grammar as compiled, every
+exit from `ask()`, the eight barriers with the test that covers each, the two-layer golden check,
+the credential and quota boundary, and the answer contract. Same colour key, so the two read
+together — and where the build is stricter than the design, the picture says so.
+
 ---
 
 ## How to read the figures

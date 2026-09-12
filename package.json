@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "ask": "tsx src/cli/ask.ts",
+    "sql": "tsx src/cli/sql.ts",
     "test": "vitest run",
     "test:llm": "GOLDEN_LLM=1 vitest run",
     "typecheck": "tsc --noEmit"
